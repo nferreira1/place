@@ -47,9 +47,7 @@ export function Work() {
 									{company.name}
 								</A>
 							) : (
-								<A to={company.link.value} target="_parent">
-									{company.name}
-								</A>
+								<A to={company.link.value}>{company.name}</A>
 							)}
 							<span> {company.period.value}</span>
 						</li>
