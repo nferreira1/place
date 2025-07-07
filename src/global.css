@@ -2,8 +2,8 @@
 
 :root {
 	--background: #000000;
-	--primary: #ffffff;
-	--primary-foreground: #aaaaaa;
+	--primary: #aaaaaa;
+	--primary-foreground: #ffffff;
 }
 
 @theme inline {
@@ -15,5 +15,27 @@
 @layer base {
 	body {
 		@apply bg-background text-primary font-mono text-xs;
+	}
+}
+
+@layer utilities {
+	.link {
+		@apply hover:decoration-primary-foreground decoration-primary/30 underline underline-offset-1 transition-colors;
+	}
+
+	.list-dash {
+		@apply grid leading-5;
+	}
+
+	.list-dash > li {
+		@apply relative;
+	}
+
+	.list-dash > li::before {
+		@apply text-primary-foreground/50 absolute -left-4 content-['-'];
+	}
+
+	.no-before::before {
+		content: none !important;
 	}
 }
