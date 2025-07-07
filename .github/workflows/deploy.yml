@@ -33,18 +33,21 @@ jobs:
               uses: actions/cache@v4
               with:
                   path: ~/.bun/install/cache
-                  key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                  key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
                   restore-keys: |
                       ${{ runner.os }}-bun-
 
-            - name: Install dependencies
-              run: bun install --frozen-lockfile
+            - name: Install Intlayer CLI globally
+              run: bun install -g intlayer-cli
 
-            - name: Verify Intlayer installation
-              run: bun x intlayer --version || echo "Intlayer CLI check failed, continuing..."
+            - name: Install production dependencies
+              run: bun install --production --frozen-lockfile
+
+            - name: Install build dependencies
+              run: bun install typescript vite @vitejs/plugin-react-swc
 
             - name: Build Intlayer dictionaries
-              run: bun run intlayer:build
+              run: intlayer build
 
             - name: Build project
               run: bun run build
