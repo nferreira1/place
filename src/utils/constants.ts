@@ -7,28 +7,29 @@ export const ROUTES: Array<{
 	path: string;
 	name: string;
 	element: React.ElementType;
-	displayFooter?: boolean;
+	i18n?: string;
 }> = [
 	{
 		path: "/",
 		name: "Home",
 		element: Home,
+		i18n: "home",
 	},
-
 	{
 		path: "/work",
 		name: "Work",
 		element: Work,
+		i18n: "work",
 	},
 	{
 		path: "/work/circulo-militar",
 		name: "Círculo Militar",
 		element: WorkCirculoMilitar,
-		displayFooter: true,
 	},
 	{
 		path: "/tools",
 		name: "Tools",
 		element: Tools,
+		i18n: "tools",
 	},
 ] as const;

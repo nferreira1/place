@@ -1,48 +1,33 @@
 import { A, Main, Section, SubTitle, Title, UL } from "@/components/html";
+import { useIntlayer } from "react-intlayer";
 
 export function Home() {
+	const content = useIntlayer("home");
+
 	return (
 		<Main>
 			<Section>
-				<Title text="Hi, I'm Nathan Ferreira 👋" />
+				<Title text={content.title.value} />
 
 				<UL>
-					<li>Love to build tools.</li>
-					<li>Trying, failing, iterating.</li>
+					{content.firstUl.map((item) => (
+						<li key={item.text.value}>{item.text.value}</li>
+					))}
 				</UL>
 			</Section>
 
 			<Section>
-				<SubTitle text="You can follow me in other places:" />
+				<SubTitle text={content.subtitle.value} />
 
 				<UL>
-					<li>
-						What I'm Building:{" "}
-						<A to="https://github.com/nferreira1" target="_blank">
-							GitHub
-						</A>
-					</li>
-
-					<li>
-						My Company:{" "}
-						<A to="https://github.com/n4nlabs" target="_blank">
-							GitHub
-						</A>
-					</li>
-
-					<li>
-						Let's Connect:{" "}
-						<A to="https://www.linkedin.com/in/nathan-ferreira-97a355231" target="_blank">
-							LinkedIn
-						</A>
-					</li>
-
-					<li>
-						My Life in Pics:{" "}
-						<A to="https://www.instagram.com/nathan_fefa" target="_blank">
-							Instagram
-						</A>
-					</li>
+					{content.secondUl.map((item) => (
+						<li key={item.text.value}>
+							{item.text.value}{" "}
+							<A to={item.to.value} target="_blank">
+								{item.aText.value}
+							</A>
+						</li>
+					))}
 				</UL>
 			</Section>
 		</Main>

@@ -1,16 +1,15 @@
 import { A, Main, P, Section, Title, UL } from "@/components/html";
+import { useIntlayer } from "react-intlayer";
 
 export function Tools() {
 	document.title = "Tools";
+	const content = useIntlayer("tools");
 
 	return (
 		<Main>
 			<Section>
-				<Title text="Tools" />
-				<P>
-					Here are some tools, hopefully others find them useful. They are all in varying states of
-					incompleteness.
-				</P>
+				<Title text={content.title.value} />
+				<P>{content.description.value}</P>
 			</Section>
 
 			<Section>
