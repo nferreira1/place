@@ -6,7 +6,7 @@ import { intlayerPlugin } from "vite-intlayer";
 
 export default defineConfig({
 	plugins: [react(), intlayerPlugin(), tailwindcss()],
-	base: "/",
+	base: "/place/",
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"),
