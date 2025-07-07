@@ -1,5 +1,7 @@
 import { cn } from "@/utils/cn";
-import { Link } from "react-router-dom";
+import { getLocalizedUrl } from "intlayer";
+import { useLocale } from "react-intlayer";
+import { Link as L } from "react-router-dom";
 
 export function Main({ children, className, ...props }: React.ComponentProps<"section">) {
 	return (
@@ -57,9 +59,23 @@ export function UL({ children, className, ...props }: React.ComponentProps<"ul">
 	);
 }
 
-export function A({ children, to, ...props }: Omit<React.ComponentProps<"a">, "href"> & { to: string }) {
+export function Link({ children, className, to, ...props }: Omit<React.ComponentProps<"a">, "href"> & { to: string }) {
+	const { locale } = useLocale();
+	const localizedTo = typeof to === "string" ? getLocalizedUrl(to, locale) : to;
+
 	return (
-		<Link to={to} className="cursor-pointer" target="_blank" {...props}>
+		<L to={localizedTo} className={cn("cursor-pointer", className)} {...props}>
+			{children}
+		</L>
+	);
+}
+
+export function A({ children, to, ...props }: Omit<React.ComponentProps<"a">, "href"> & { to: string }) {
+	const { locale } = useLocale();
+	const localizedTo = typeof to === "string" ? getLocalizedUrl(to, locale) : to;
+
+	return (
+		<Link to={localizedTo} className="cursor-pointer" target="_blank" {...props}>
 			<span className="link decoration-2">{children}</span>
 		</Link>
 	);
