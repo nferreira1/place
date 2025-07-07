@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Nathan Ferreira</title>
+		<script>
+			// Single Page Apps for GitHub Pages
+			// This script takes the current url and converts the path and query
+			// string into just a query string, and then redirects the browser
+			// to the new url with only a query string and hash fragment,
+			// e.g. https://nathan.place/work/circulo-militar becomes
+			// https://nathan.place/?/work/circulo-militar
+			// Note: this 404.html file must be at least 512 bytes for it to work
+			// with Internet Explorer (it is currently > 512 bytes)
+
+			// For custom domain (nathan.place), set pathSegmentsToKeep to 0
+			var pathSegmentsToKeep = 0;
+
+			var l = window.location;
+			l.replace(
+				l.protocol +
+					"//" +
+					l.hostname +
+					(l.port ? ":" + l.port : "") +
+					l.pathname
+						.split("/")
+						.slice(0, 1 + pathSegmentsToKeep)
+						.join("/") +
+					"/?/" +
+					l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+					(l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+					l.hash,
+			);
+		</script>
+	</head>
+	<body>
+		<div style="font-family: Arial, sans-serif; text-align: center; padding: 50px">
+			<h1>Redirecting...</h1>
+			<p>You will be redirected to the application in a moment.</p>
+			<p>If you are not redirected automatically, <a href="/">click here</a>.</p>
+		</div>
+	</body>
+</html>
