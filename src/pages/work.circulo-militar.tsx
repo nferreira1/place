@@ -1,5 +1,6 @@
 import { HR, Img, Main, P, Section, SubTitle, Title, UL } from "@/components/html";
 import { useIntlayer } from "react-intlayer";
+import { Link } from "react-router-dom";
 
 export function WorkCirculoMilitar() {
 	const content = useIntlayer("work-circulo-militar");
@@ -31,23 +32,21 @@ export function WorkCirculoMilitar() {
 
 					<div className="bg-primary-foreground/10 flex gap-2 rounded p-2">
 						{Array.from({ length: 7 }, (_, i) => (
-							<div>
-								<Img
-									key={`/images/qrcodeapp/light/0${i + 1}.png`}
-									src={`/images/qrcodeapp/light/0${i + 1}.png`}
-								/>
-							</div>
+							<Link
+								to={`/images/qrcodeapp/light/0${i + 1}.png`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Img src={`/images/qrcodeapp/light/0${i + 1}.png`} />
+							</Link>
 						))}
 					</div>
 
 					<div className="bg-primary-foreground/10 flex gap-2 rounded p-2">
 						{Array.from({ length: 7 }, (_, i) => (
-							<div>
-								<Img
-									key={`/images/qrcodeapp/dark/0${i + 1}.png`}
-									src={`/images/qrcodeapp/dark/0${i + 1}.png`}
-								/>
-							</div>
+							<Link to={`/images/qrcodeapp/dark/0${i + 1}.png`} target="_blank" rel="noopener noreferrer">
+								<Img src={`/images/qrcodeapp/dark/0${i + 1}.png`} />
+							</Link>
 						))}
 					</div>
 				</Section>
@@ -61,10 +60,16 @@ export function WorkCirculoMilitar() {
 
 					{Array.from({ length: 7 }, (_, i) => (
 						<div className="bg-primary-foreground/10 rounded p-2">
-							<Img
-								key={`/images/scheduling-system/0${i + 1}.png`}
-								src={`/images/scheduling-system/0${i + 1}.png`}
-							/>
+							<Link
+								to={`/images/scheduling-system/0${i + 1}.png`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Img
+									key={`/images/scheduling-system/0${i + 1}.png`}
+									src={`/images/scheduling-system/0${i + 1}.png`}
+								/>
+							</Link>
 						</div>
 					))}
 				</Section>
@@ -87,10 +92,16 @@ export function WorkCirculoMilitar() {
 
 					{Array.from({ length: 8 }, (_, i) => (
 						<div className="bg-primary-foreground/10 rounded p-2">
-							<Img
-								key={`/images/internal-systems-portal/0${i + 1}.png`}
-								src={`/images/internal-systems-portal/0${i + 1}.png`}
-							/>
+							<Link
+								to={`/images/internal-systems-portal/0${i + 1}.png`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Img
+									key={`/images/internal-systems-portal/0${i + 1}.png`}
+									src={`/images/internal-systems-portal/0${i + 1}.png`}
+								/>
+							</Link>
 						</div>
 					))}
 				</Section>

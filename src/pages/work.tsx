@@ -43,11 +43,13 @@ export function Work() {
 					{content.companies.map((company, index) => (
 						<li key={index}>
 							{company.isExternal ? (
-								<A to={company.link.value} target="_parent">
+								<A to={company.link.value} target="_blank">
 									{company.name}
 								</A>
 							) : (
-								<A to={company.link.value}>{company.name}</A>
+								<A to={company.link.value} target="_parent">
+									{company.name}
+								</A>
 							)}
 							<span> {company.period.value}</span>
 						</li>
