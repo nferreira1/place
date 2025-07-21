@@ -3,10 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
-      day: monday
-      time: "06:00"
-      timezone: America/Sao_Paulo
+      interval: daily
     open-pull-requests-limit: 10
     reviewers:
       - nferreira1
@@ -23,10 +20,7 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
-      day: monday
-      time: "06:00"
-      timezone: America/Sao_Paulo
+      interval: daily
     open-pull-requests-limit: 5
     reviewers:
       - nferreira1
