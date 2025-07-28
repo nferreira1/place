@@ -1,21 +1,27 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    reviewers:
-      - nferreira1
-    assignees:
-      - nferreira1
-        
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    reviewers:
-      - nferreira1
-    assignees:
-      - nferreira1
+    - package-ecosystem: "npm"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "06:00"
+          timezone: "America/Sao_Paulo"
+      open-pull-requests-limit: 10
+      reviewers:
+          - nferreira1
+      assignees:
+          - nferreira1
+
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+          day: "monday"
+          time: "06:00"
+          timezone: "America/Sao_Paulo"
+      open-pull-requests-limit: 5
+      reviewers:
+          - nferreira1
+      assignees:
+          - nferreira1
