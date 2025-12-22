@@ -16,7 +16,7 @@
 		"intlayer": "^5.5.11",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
-		"react-intlayer": "^5.5.11",
+		"react-intlayer": "^7.5.2",
 		"react-router-dom": "^7.6.3",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.11"
